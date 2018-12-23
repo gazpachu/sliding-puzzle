@@ -2,9 +2,14 @@
   margin: 40px;
   background: #cecece;
   position: relative;
+  background-image: url(../assets/monks.jpg);
+  width: 500px;
+  height: 500px;
+  background-blend-mode: overlay;
 }
 
 .preview {
   position: absolute;
+  top: 40px;
   right: 40px;
 }
