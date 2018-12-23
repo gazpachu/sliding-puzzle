@@ -1,0 +1,13 @@
+.piece {
+  background-image: url(./monks.jpg);
+  position: absolute;
+  border: 1px solid #fff;
+}
+
+.piece span {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: white;
+  font-size: 12px;
+}

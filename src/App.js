@@ -1,24 +1,43 @@
 import React, { Component } from 'react';
+import Piece from './Piece';
 import monks from './monks.jpg';
 import './App.css';
 
+const PUZZLE_SIZE = 500;
+const COLUMNS = 4;
+const TOTAL_PIECES = COLUMNS * COLUMNS;
+const PIECE_SIZE = PUZZLE_SIZE / COLUMNS;
+
 class App extends Component {
+  createPieces() {
+    const pieces = [];
+    let row = 0;
+
+    for (let i = 0; i < TOTAL_PIECES; i += 1) {
+      row = (i > 0 && i % COLUMNS === 0) ? row += PIECE_SIZE : row;
+
+      pieces.push(
+        <Piece
+          size={PIECE_SIZE}
+          row={row}
+          column={i % COLUMNS}
+          index={i}
+          key={`piece-${i}`}
+        />
+      );
+    }
+
+    return pieces;
+  }
+
   render() {
     return (
       <div className="App">
         <div className="puzzle">
-          <div className="piece one" style={{ backgroundPosition: '0 0' }} />
-          <div className="piece two" style={{ backgroundPosition: '-165px 0' }} />
-          <div className="piece three" style={{ backgroundPosition: '-330px 0' }} />
-          <div className="piece four" style={{ backgroundPosition: '0 -165px' }} />
-          <div className="piece five" style={{ backgroundPosition: '-165px -165px' }} />
-          <div className="piece six" style={{ backgroundPosition: '-330px -165px' }} />
-          <div className="piece seven" style={{ backgroundPosition: '0 -330px' }} />
-          <div className="piece eight" style={{ backgroundPosition: '-165px -330px' }} />
-          <div className="piece nine" style={{ backgroundPosition: '-330px -330px' }} />
+          {this.createPieces()}
         </div>
 
-        <img className="preview" src={monks} alt="Preview" width="100" />
+        <img className="preview" src={monks} alt="Preview" width={PIECE_SIZE} height={PIECE_SIZE} />
       </div>
     );
   }
