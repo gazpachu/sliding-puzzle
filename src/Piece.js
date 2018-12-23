@@ -3,7 +3,7 @@ import './styles/piece.css';
 
 class Piece extends Component {
   render() {
-    const { index, size, column, row } = this.props;
+    const { index, size, column, row, realRow, realColumn } = this.props;
 
     return (<Fragment>
       <div
@@ -11,8 +11,8 @@ class Piece extends Component {
         style={{
           width: size,
           height: size,
-          top: `${row}px`,
-          left: `${size * column}px`,
+          top: `${realRow}px`,
+          left: `${size * realColumn}px`,
           backgroundPosition: `-${column * size}px -${row}px`
         }}
       >

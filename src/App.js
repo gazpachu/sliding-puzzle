@@ -1,41 +1,34 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Piece from './Piece';
 import Monks from './assets/monks.jpg';
-import shuffle from './Helpers';
+import * as CONSTANTS from './constants';
 import './styles/app.css';
 
-const PUZZLE_SIZE = 500;
-const COLUMNS = 4;
-const TOTAL_PIECES = COLUMNS * COLUMNS;
-const PIECE_SIZE = PUZZLE_SIZE / COLUMNS;
+const PIECE_SIZE = CONSTANTS.PUZZLE_SIZE / CONSTANTS.COLUMNS;
 
 class App extends Component {
-  createPieces() {
-    let pieces = [];
-    let row = 0;
-
-    for (let i = 0; i < TOTAL_PIECES; i += 1) {
-      row = (i > 0 && i % COLUMNS === 0) ? row += PIECE_SIZE : row;
-
-      pieces.push(
-        <Piece
-          size={PIECE_SIZE}
-          row={row}
-          column={i % COLUMNS}
-          index={i}
-          key={`piece-${i}`}
-        />
-      );
-    }
-
-    return shuffle(pieces);
-  }
-
   render() {
+    const { order } = this.props;
+    let row = 0;
+    let realRow = 0;
+
     return (
       <div className="App">
         <div className="puzzle">
-          {this.createPieces()}
+          {order.map((index, i) => {
+            row = Math.floor(i / CONSTANTS.COLUMNS) * PIECE_SIZE;
+            realRow = Math.floor(index / CONSTANTS.COLUMNS) * PIECE_SIZE;
+            return (<Piece
+              size={PIECE_SIZE}
+              row={row}
+              column={i % CONSTANTS.COLUMNS}
+              realRow={realRow}
+              realColumn={index % CONSTANTS.COLUMNS}
+              index={i+1}
+              key={`piece-${index}`}
+            />);
+          })}
         </div>
 
         <img className="preview" src={Monks} alt="Preview" width={PIECE_SIZE} height={PIECE_SIZE} />
@@ -44,4 +37,13 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = null;
+const mapStateToProps = ({
+  mainReducer: {
+    order
+  }
+}) => ({
+  order
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
