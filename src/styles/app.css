@@ -1,0 +1,10 @@
+.puzzle {
+  margin: 40px;
+  background: #cecece;
+  position: relative;
+}
+
+.preview {
+  position: absolute;
+  right: 40px;
+}

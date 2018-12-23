@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Piece from './Piece';
-import monks from './monks.jpg';
-import './App.css';
+import Monks from './assets/monks.jpg';
+import shuffle from './Helpers';
+import './styles/app.css';
 
 const PUZZLE_SIZE = 500;
 const COLUMNS = 4;
@@ -10,7 +11,7 @@ const PIECE_SIZE = PUZZLE_SIZE / COLUMNS;
 
 class App extends Component {
   createPieces() {
-    const pieces = [];
+    let pieces = [];
     let row = 0;
 
     for (let i = 0; i < TOTAL_PIECES; i += 1) {
@@ -27,7 +28,7 @@ class App extends Component {
       );
     }
 
-    return pieces;
+    return shuffle(pieces);
   }
 
   render() {
@@ -37,7 +38,7 @@ class App extends Component {
           {this.createPieces()}
         </div>
 
-        <img className="preview" src={monks} alt="Preview" width={PIECE_SIZE} height={PIECE_SIZE} />
+        <img className="preview" src={Monks} alt="Preview" width={PIECE_SIZE} height={PIECE_SIZE} />
       </div>
     );
   }

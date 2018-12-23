@@ -1,5 +1,5 @@
 .piece {
-  background-image: url(./monks.jpg);
+  background-image: url(../assets/monks.jpg);
   position: absolute;
   border: 1px solid #fff;
 }
