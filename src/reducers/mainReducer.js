@@ -21,7 +21,7 @@ export default (state = {
       return { ...state, order, moves };
 
     case 'INCREASE_TIME':
-      const score = state.score - (1 + state.moves);
+      const score = state.score - (1 + (state.moves ? state.moves : 0));
       return { ...state, time: action.payload, score };
 
     default: return state

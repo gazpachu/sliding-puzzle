@@ -26,3 +26,18 @@ it('should handle SLIDE', () => {
     moves: 1
   });
 });
+
+it('should handle INCREASE_TIME', () => {
+  expect(
+    mainReducer({
+      time: 0,
+      score: CONSTANTS.SCORE
+    }, {
+      type: CONSTANTS.INCREASE_TIME,
+      payload: 1
+    })
+  ).toEqual({
+    time: 1,
+    score: CONSTANTS.SCORE - 1
+  });
+});
