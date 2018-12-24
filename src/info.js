@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { getEmptyTileIndex } from './selectors'
 import { increaseTime, endGame, cheat } from './actions/actions';
 import { consecutive } from './Helpers';
 import Monks from './assets/monks.jpg';
@@ -24,7 +25,7 @@ class Info extends PureComponent {
   }
 
   render() {
-    const { moves, time, score, cheat, size } = this.props;
+    const { moves, time, score, cheat, size, emptyTileIndex } = this.props;
     const minutes = Math.floor(time / 60);
     const seconds = time - minutes * 60;
 
@@ -33,7 +34,7 @@ class Info extends PureComponent {
         <img className="logo" src={Logo} alt="MediaMonks" />
         <img className="preview" src={Monks} alt="Preview" width={size} height={size} />
         <div className="details">
-          <div className="empty">Empty index: 0</div>
+          <div className="empty">Empty index: {emptyTileIndex}</div>
           <div className="moves">Moves: {moves}</div>
           <div className="time">Time: {minutes}m {seconds}s</div>
           <div className="score">Score: {score}</div>
@@ -50,18 +51,14 @@ const mapDispatchToProps = {
   endGame
 };
 
-const mapStateToProps = ({
-  mainReducer: {
-    order,
-    moves,
-    score,
-    time
+const mapStateToProps = state => {
+  return {
+    order: state.mainReducer.order,
+    moves: state.mainReducer.moves,
+    score: state.mainReducer.score,
+    time: state.mainReducer.time,
+    emptyTileIndex: getEmptyTileIndex(state)
   }
-}) => ({
-  order,
-  moves,
-  score,
-  time
-});
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Info);
