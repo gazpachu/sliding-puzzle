@@ -11,3 +11,15 @@ export const increaseTime = (time) => dispatch => {
     payload: time
   })
 }
+
+export const cheat = () => dispatch => {
+  dispatch({
+    type: 'CHEAT'
+  })
+}
+
+export const endGame = () => dispatch => {
+  dispatch({
+    type: 'END_GAME'
+  })
+}

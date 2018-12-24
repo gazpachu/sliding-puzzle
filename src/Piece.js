@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
 import CONSTANTS from './constants';
 import { slide } from './actions/actions';
 import './styles/piece.css';
 
-class Piece extends Component {
+class Piece extends PureComponent {
   attemptSlide(pos) {
     const { order, slide } = this.props;
     let newPos = null;
