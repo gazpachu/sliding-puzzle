@@ -18,7 +18,7 @@ export const shuffle = (a) => {
 export const consecutive = (arr) => {
   console.log('check end game');
   for (let i = 1; i < arr.length; i += 1) {
-    if (((i !== arr.length - 1) && arr[i] === null) || arr[i] < arr[i - 1]) return false;
+    if (i !== arr.length - 1 && (arr[i] === null || arr[i - 1] === null || arr[i] < arr[i - 1])) return false;
   }
   return true;
 }

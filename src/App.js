@@ -38,10 +38,11 @@ class App extends PureComponent {
     const { gameOver } = this.props;
     return (
       <div className="app">
-        <div className="puzzle">
-          {gameOver ? <div className="congrats">Well done!!!</div> : this.renderPieces()}
+        <div className={`puzzle ${gameOver ? 'game-over' : ''}`}>
+          {gameOver ? <div className="congrats">Congratulations. You win! Thanks for playing</div> : this.renderPieces()}
         </div>
         <Info size={PIECE_SIZE} />
+        <footer className="footer">Sliding puzzle test with React and Redux for <a href="http://mediamonks.com">MediaMonks</a> by <a href="http://joanmira.com">Joan Mira</a> (<a href="https://github.com/gazpachu/sliding-puzzle">code</a>)</footer>
       </div>
     );
   }

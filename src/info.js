@@ -16,7 +16,7 @@ class Info extends PureComponent {
 
     if (newProps.moves !== this.props.moves) {
       // End game if all the tiles are in the right position
-      if (consecutive(this.props.order)) {
+      if (consecutive(newProps.order)) {
         clearInterval(this.interval);
         this.props.endGame();
       }
@@ -33,11 +33,12 @@ class Info extends PureComponent {
         <img className="logo" src={Logo} alt="MediaMonks" />
         <img className="preview" src={Monks} alt="Preview" width={size} height={size} />
         <div className="details">
+          <div className="empty">Empty index: 0</div>
           <div className="moves">Moves: {moves}</div>
           <div className="time">Time: {minutes}m {seconds}s</div>
           <div className="score">Score: {score}</div>
         </div>
-        <button className="cheat" onClick={() => cheat()}>cheat</button>
+        <button className="cheat" onClick={() => cheat()}>cheat ¯\(°_o)/¯</button>
       </div>
     );
   }
