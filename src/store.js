@@ -5,6 +5,6 @@ import rootReducer from './reducers/rootReducer';
 export default function configureStore(initialState={}) {
   return createStore(
     rootReducer,
-    compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f)
+    compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
   );
 }

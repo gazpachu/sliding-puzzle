@@ -2,6 +2,8 @@
   background-image: url(../assets/monks.jpg);
   position: absolute;
   border: 1px solid #fff;
+  cursor: pointer;
+  transition: all 1s ease-out;
 }
 
 .piece span {

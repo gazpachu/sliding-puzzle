@@ -1,19 +1,30 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+import { attemptSlide } from './actions/actions';
 import './styles/piece.css';
 
 class Piece extends Component {
   render() {
-    const { index, size, column, row, realRow, realColumn } = this.props;
+    const {
+      index,
+      size,
+      offsetY,
+      offsetX,
+      top,
+      left,
+      attemptSlide
+    } = this.props;
 
     return (<Fragment>
       <div
         className="piece"
+        onClick={() => attemptSlide(index)}
         style={{
           width: size,
           height: size,
-          top: `${realRow}px`,
-          left: `${size * realColumn}px`,
-          backgroundPosition: `-${column * size}px -${row}px`
+          top: `${top}px`,
+          left: `${size * left}px`,
+          backgroundPosition: `-${offsetY * size}px -${offsetX}px`
         }}
       >
         <span>{index}</span>
@@ -22,4 +33,10 @@ class Piece extends Component {
   }
 }
 
-export default Piece;
+const mapDispatchToProps = {
+  attemptSlide
+};
+
+const mapStateToProps = null;
+
+export default connect(mapStateToProps, mapDispatchToProps)(Piece);

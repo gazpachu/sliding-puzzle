@@ -1,6 +1,6 @@
-export const simpleAction = () => dispatch => {
+export const attemptSlide = (index) => dispatch => {
   dispatch({
-    type: 'SIMPLE_ACTION',
-    payload: 'result_of_simple_action'
+    type: 'ATTEMPT_SLIDE',
+    payload: index
   })
 }
