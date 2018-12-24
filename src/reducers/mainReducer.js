@@ -1,8 +1,9 @@
 import { COLUMNS } from '../constants';
-import shuffle from '../Helpers';
+import { shuffle } from '../Helpers';
 
+// Create an array of shuffled numbers to represent the pieces of the puzzle
 const initialOrder = shuffle(Array.apply(null, {length: (COLUMNS*COLUMNS)}).map(Number.call, Number));
-initialOrder[15] = null;
+initialOrder[15] = null; // make the last piece always empty
 
 export default (state = {
   order: initialOrder

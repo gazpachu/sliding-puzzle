@@ -13,3 +13,9 @@
   top: 40px;
   right: 40px;
 }
+
+.congrats {
+  text-align: center;
+  padding: 20px;
+  font-size: 40px;
+}

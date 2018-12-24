@@ -1,8 +1,8 @@
 /**
- * Shuffles array in place
- * @param {Array} a items An array containing the items.
+ * Shuffles the numbers in the array
+ * @param {Array}
  */
-const shuffle = (a) => {
+export const shuffle = (a) => {
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
@@ -10,4 +10,13 @@ const shuffle = (a) => {
   return a;
 }
 
-export default shuffle;
+/**
+ * Returns true if the numbers in the array are consecutive or false if not
+ * @param {Array}
+ */
+export const consecutive = (arr) => {
+  for (let i = 1; i < arr.length; i += 1) {
+    if (arr[i] !== null && arr[i - 1] !== null && arr[i] < arr[i - 1]) return false;
+  }
+  return true;
+}
