@@ -7,6 +7,7 @@ class Piece extends Component {
   render() {
     const {
       index,
+      pos,
       size,
       offsetY,
       offsetX,
@@ -18,7 +19,7 @@ class Piece extends Component {
     return (<Fragment>
       <div
         className="piece"
-        onClick={() => attemptSlide(index)}
+        onClick={() => attemptSlide(pos)}
         style={{
           width: size,
           height: size,

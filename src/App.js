@@ -23,7 +23,7 @@ class App extends Component {
       offsetX = Math.floor(index / CONSTANTS.COLUMNS) * PIECE_SIZE;
       top = Math.floor(i / CONSTANTS.COLUMNS) * PIECE_SIZE;
 
-      console.log(index);
+      // console.log(index);
 
       if (order[i] !== null) {
         return (<Piece
@@ -32,7 +32,8 @@ class App extends Component {
           offsetY={order[i] % CONSTANTS.COLUMNS}
           top={top}
           left={i % CONSTANTS.COLUMNS}
-          index={order[i] + 1}
+          index={order[i]}
+          pos={i}
           key={`piece-${index}`}
         />);
       }

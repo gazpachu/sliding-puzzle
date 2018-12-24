@@ -3,7 +3,7 @@
   position: absolute;
   border: 1px solid #fff;
   cursor: pointer;
-  transition: all 1s ease-out;
+  transition: all .5s ease-out;
 }
 
 .piece span {

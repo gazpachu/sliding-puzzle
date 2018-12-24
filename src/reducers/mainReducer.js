@@ -9,13 +9,29 @@ export default (state = {
 }, action) => {
   switch (action.type) {
     case 'ATTEMPT_SLIDE':
-      const newOrder = state.order.slice();
-      const index = newOrder.indexOf(action.payload);
-      if (index !== -1) {
-        newOrder[index] = null;
-        newOrder[15] = action.payload;
+      let newPos = null;
+      if (state.order[action.payload + 1] === null) {
+        console.log('Can move right');
+        newPos = action.payload + 1;
+      } else if (state.order[action.payload - 1] === null) {
+        console.log('Can move left');
+        newPos = action.payload - 1;
+      } else if (state.order[action.payload + COLUMNS] === null) {
+        console.log('Can move down');
+        newPos = action.payload + COLUMNS;
+      } else if (state.order[action.payload - COLUMNS] === null) {
+        console.log('Can move up');
+        newPos = action.payload - COLUMNS;
       }
-      return { ...state, order: newOrder };
+
+      if (newPos !== null) {
+        const newOrder = state.order.slice();
+        const index = newOrder[action.payload];
+        newOrder[action.payload] = null;
+        newOrder[newPos] = index;
+        return { ...state, order: newOrder };
+      }
+      return { ...state };
     default: return state
   }
 }
