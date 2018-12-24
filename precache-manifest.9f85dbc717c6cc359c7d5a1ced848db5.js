@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "e32b9a7c985d89852028",
-    "url": "/sliding-puzzle/static/css/main.cc8a9ab5.chunk.css"
+    "revision": "ad5d14a581ea6fcc5393",
+    "url": "/sliding-puzzle/static/css/main.5b5ee553.chunk.css"
   },
   {
-    "revision": "e32b9a7c985d89852028",
-    "url": "/sliding-puzzle/static/js/main.e32b9a7c.chunk.js"
+    "revision": "ad5d14a581ea6fcc5393",
+    "url": "/sliding-puzzle/static/js/main.ad5d14a5.chunk.js"
   },
   {
-    "revision": "768e7a0466a664e6ced2",
-    "url": "/sliding-puzzle/static/js/1.768e7a04.chunk.js"
+    "revision": "f598aa2fac8188b4bbca",
+    "url": "/sliding-puzzle/static/js/1.f598aa2f.chunk.js"
   },
   {
     "revision": "75ca8af8ac301df996fb",
@@ -24,11 +24,11 @@ self.__precacheManifest = [
     "url": "/sliding-puzzle/static/media/logo.61cb01d2.svg"
   },
   {
-    "revision": "51d2f5b9af7e8794715de12d590fcee3",
-    "url": "/sliding-puzzle/static/media/smoke.51d2f5b9.png"
+    "revision": "9fecc65cf8232c1dcc85d29cd132a6c8",
+    "url": "/sliding-puzzle/static/media/smoke.9fecc65c.jpg"
   },
   {
-    "revision": "5ad5e30e61f6207497db76615a129fd5",
+    "revision": "895fb4faae935e2fd76df4370b8994d1",
     "url": "/sliding-puzzle/index.html"
   }
 ];
