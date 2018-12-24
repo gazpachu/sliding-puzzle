@@ -1,4 +1,4 @@
-import { shuffle } from './Helpers';
+import { shuffle } from './helpers';
 
 const columns = 4;
 

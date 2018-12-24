@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { getEmptyTileIndex } from './selectors'
 import { increaseTime, endGame, cheat } from './actions/actions';
-import { consecutive } from './Helpers';
+import { consecutive } from './helpers';
 import Monks from './assets/monks.jpg';
 import Logo from './assets/logo.svg';
 import './styles/info.css';

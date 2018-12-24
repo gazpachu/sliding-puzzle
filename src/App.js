@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import Piece from './Piece';
+import Piece from './piece';
 import Info from './info';
 import CONSTANTS from './constants';
 import './styles/app.css';
