@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { increaseTime, endGame, cheat } from './actions/actions';
 import { consecutive } from './Helpers';
 import Monks from './assets/monks.jpg';
+import Logo from './assets/logo.svg';
 import './styles/info.css';
 
 class Info extends PureComponent {
@@ -29,6 +30,7 @@ class Info extends PureComponent {
 
     return (
       <div className="info">
+        <img className="logo" src={Logo} alt="MediaMonks" />
         <img className="preview" src={Monks} alt="Preview" width={size} height={size} />
         <div className="details">
           <div className="moves">Moves: {moves}</div>

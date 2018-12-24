@@ -1,13 +1,15 @@
 .piece {
   background-image: url(../assets/monks.jpg);
   position: absolute;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   cursor: pointer;
   transition: all .5s ease;
 }
 
 .piece:hover {
   border-style: dashed;
+  border-color: white;
+  z-index: 1;
 }
 
 .piece span {

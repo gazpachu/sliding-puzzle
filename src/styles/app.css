@@ -1,5 +1,11 @@
+.app {
+  background-image: url(../assets/smoke.png);
+  padding: 40px;
+  height: calc(100vh - 80px);
+  background-size: cover;
+}
+
 .puzzle {
-  margin: 40px;
   background: #cecece;
   position: relative;
   background-image: url(../assets/monks.jpg);
