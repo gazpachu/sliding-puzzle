@@ -3,7 +3,7 @@
   position: absolute;
   border: 1px solid #fff;
   cursor: pointer;
-  transition: all .5s ease-out;
+  transition: all .5s ease;
 }
 
 .piece:hover {

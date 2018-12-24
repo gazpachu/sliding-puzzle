@@ -4,5 +4,6 @@ module.exports = {
   COLUMNS: 4,
 
   // Redux actions
-  ATTEMPT_SLIDE: 'ATTEMPT_SLIDE'
+  ATTEMPT_SLIDE: 'ATTEMPT_SLIDE',
+  INCREASE_TIME: 'INCREASE_TIME'
 };
