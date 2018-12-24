@@ -1,7 +1,7 @@
 import { COLUMNS } from '../constants';
 import { shuffle } from '../Helpers';
 
-// Create an array of shuffled numbers to represent the pieces of the puzzle
+// Create an array of shuffled numbers to represent the order of the pieces in the puzzle
 const initialOrder = shuffle(Array.apply(null, {length: (COLUMNS*COLUMNS)}).map(Number.call, Number));
 initialOrder[15] = null; // make the last piece always empty
 
@@ -12,7 +12,7 @@ export default (state = {
   score: 1200000
 }, action) => {
   switch (action.type) {
-    case 'ATTEMPT_SLIDE':
+    case 'SLIDE':
       let newPos = null;
       if (state.order[action.payload + 1] === null) {
         // console.log('Can move right');

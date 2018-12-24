@@ -1,6 +1,6 @@
-export const attemptSlide = (index) => dispatch => {
+export const slide = (index) => dispatch => {
   dispatch({
-    type: 'ATTEMPT_SLIDE',
+    type: 'SLIDE',
     payload: index
   })
 }

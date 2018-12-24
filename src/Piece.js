@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { attemptSlide } from './actions/actions';
+import { slide } from './actions/actions';
 import './styles/piece.css';
 
 class Piece extends Component {
@@ -13,13 +13,13 @@ class Piece extends Component {
       offsetX,
       top,
       left,
-      attemptSlide
+      slide
     } = this.props;
 
     return (<Fragment>
       <div
         className="piece"
-        onClick={() => attemptSlide(pos)}
+        onClick={() => slide(pos)}
         style={{
           width: size,
           height: size,
@@ -35,7 +35,7 @@ class Piece extends Component {
 }
 
 const mapDispatchToProps = {
-  attemptSlide
+  slide
 };
 
 const mapStateToProps = null;
