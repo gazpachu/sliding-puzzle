@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "ad5d14a581ea6fcc5393",
+    "revision": "c77302eba6acef9a5647",
     "url": "/sliding-puzzle/static/css/main.5b5ee553.chunk.css"
   },
   {
-    "revision": "ad5d14a581ea6fcc5393",
-    "url": "/sliding-puzzle/static/js/main.ad5d14a5.chunk.js"
+    "revision": "c77302eba6acef9a5647",
+    "url": "/sliding-puzzle/static/js/main.c77302eb.chunk.js"
   },
   {
-    "revision": "f598aa2fac8188b4bbca",
-    "url": "/sliding-puzzle/static/js/1.f598aa2f.chunk.js"
+    "revision": "a09e5d5727230746c6c2",
+    "url": "/sliding-puzzle/static/js/1.a09e5d57.chunk.js"
   },
   {
     "revision": "75ca8af8ac301df996fb",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/sliding-puzzle/static/media/smoke.9fecc65c.jpg"
   },
   {
-    "revision": "895fb4faae935e2fd76df4370b8994d1",
+    "revision": "cf00f1191b18aca19d3115a28f878208",
     "url": "/sliding-puzzle/index.html"
   }
 ];

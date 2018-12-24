@@ -1,15 +1,15 @@
 {
   "main.css": "/sliding-puzzle/static/css/main.5b5ee553.chunk.css",
-  "main.js": "/sliding-puzzle/static/js/main.ad5d14a5.chunk.js",
-  "main.js.map": "/sliding-puzzle/static/js/main.ad5d14a5.chunk.js.map",
-  "static/js/1.f598aa2f.chunk.js": "/sliding-puzzle/static/js/1.f598aa2f.chunk.js",
-  "static/js/1.f598aa2f.chunk.js.map": "/sliding-puzzle/static/js/1.f598aa2f.chunk.js.map",
+  "main.js": "/sliding-puzzle/static/js/main.c77302eb.chunk.js",
+  "main.js.map": "/sliding-puzzle/static/js/main.c77302eb.chunk.js.map",
+  "static/js/1.a09e5d57.chunk.js": "/sliding-puzzle/static/js/1.a09e5d57.chunk.js",
+  "static/js/1.a09e5d57.chunk.js.map": "/sliding-puzzle/static/js/1.a09e5d57.chunk.js.map",
   "runtime~main.js": "/sliding-puzzle/static/js/runtime~main.75ca8af8.js",
   "runtime~main.js.map": "/sliding-puzzle/static/js/runtime~main.75ca8af8.js.map",
   "static/media/app.css": "/sliding-puzzle/static/media/smoke.9fecc65c.jpg",
   "static/media/logo.svg": "/sliding-puzzle/static/media/logo.61cb01d2.svg",
   "static/css/main.5b5ee553.chunk.css.map": "/sliding-puzzle/static/css/main.5b5ee553.chunk.css.map",
   "index.html": "/sliding-puzzle/index.html",
-  "precache-manifest.9f85dbc717c6cc359c7d5a1ced848db5.js": "/sliding-puzzle/precache-manifest.9f85dbc717c6cc359c7d5a1ced848db5.js",
+  "precache-manifest.fb283d12ed54a7fe6c88cb08112af2ae.js": "/sliding-puzzle/precache-manifest.fb283d12ed54a7fe6c88cb08112af2ae.js",
   "service-worker.js": "/sliding-puzzle/service-worker.js"
 }
