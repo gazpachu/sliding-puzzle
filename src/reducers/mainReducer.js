@@ -1,46 +1,24 @@
-import { COLUMNS } from '../constants';
-import { shuffle } from '../Helpers';
-
-// Create an array of shuffled numbers to represent the order of the pieces in the puzzle
-const initialOrder = shuffle(Array.apply(null, {length: (COLUMNS*COLUMNS)}).map(Number.call, Number));
-initialOrder[15] = null; // make the last piece always empty
+import CONSTANTS from '../constants';
 
 export default (state = {
-  order: initialOrder,
+  order: CONSTANTS.INITIAL_ORDER,
   moves: 0,
   time: 0,
-  score: 1200000
+  score: CONSTANTS.SCORE
 }, action) => {
   switch (action.type) {
     case 'SLIDE':
-      let newPos = null;
-      if (state.order[action.payload + 1] === null) {
-        // console.log('Can move right');
-        newPos = action.payload + 1;
-      } else if (state.order[action.payload - 1] === null) {
-        // console.log('Can move left');
-        newPos = action.payload - 1;
-      } else if (state.order[action.payload + COLUMNS] === null) {
-        // console.log('Can move down');
-        newPos = action.payload + COLUMNS;
-      } else if (state.order[action.payload - COLUMNS] === null) {
-        // console.log('Can move up');
-        newPos = action.payload - COLUMNS;
-      }
+      // Switch tiles' positions
+      console.log(action.payload);
+      const order = state.order.slice();
+      const index = order[action.payload.pos];
+      order[action.payload.pos] = null;
+      order[action.payload.newPos] = index;
 
-      if (newPos !== null) {
-        // Switch tiles' positions
-        const order = state.order.slice();
-        const index = order[action.payload];
-        order[action.payload] = null;
-        order[newPos] = index;
+      // Increase moves
+      const moves = state.moves + 1;
 
-        // Increase moves
-        const moves = state.moves + 1;
-
-        return { ...state, order, moves };
-      }
-      return { ...state };
+      return { ...state, order, moves };
 
     case 'INCREASE_TIME':
       const score = state.score - (1 + state.moves);

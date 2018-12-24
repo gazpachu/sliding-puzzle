@@ -1,9 +1,31 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import CONSTANTS from './constants';
 import { slide } from './actions/actions';
 import './styles/piece.css';
 
 class Piece extends Component {
+  attemptSlide(pos) {
+    const { order, slide } = this.props;
+    let newPos = null;
+
+    if (order[pos + 1] === null) {
+      // console.log('Can move right');
+      newPos = pos + 1;
+    } else if (order[pos - 1] === null) {
+      // console.log('Can move left');
+      newPos = pos - 1;
+    } else if (order[pos + CONSTANTS.COLUMNS] === null) {
+      // console.log('Can move down');
+      newPos = pos + CONSTANTS.COLUMNS;
+    } else if (order[pos - CONSTANTS.COLUMNS] === null) {
+      // console.log('Can move up');
+      newPos = pos - CONSTANTS.COLUMNS;
+    }
+
+    if (newPos !== null) slide({ pos, newPos });
+  }
+
   render() {
     const {
       index,
@@ -12,14 +34,13 @@ class Piece extends Component {
       offsetY,
       offsetX,
       top,
-      left,
-      slide
+      left
     } = this.props;
 
     return (<Fragment>
       <div
         className="piece"
-        onClick={() => slide(pos)}
+        onClick={() => this.attemptSlide(pos)}
         style={{
           width: size,
           height: size,
@@ -38,6 +59,12 @@ const mapDispatchToProps = {
   slide
 };
 
-const mapStateToProps = null;
+const mapStateToProps = ({
+  mainReducer: {
+    order
+  }
+}) => ({
+  order
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Piece);

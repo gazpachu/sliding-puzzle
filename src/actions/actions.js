@@ -1,7 +1,7 @@
-export const slide = (index) => dispatch => {
+export const slide = (payload) => dispatch => {
   dispatch({
     type: 'SLIDE',
-    payload: index
+    payload
   })
 }
 

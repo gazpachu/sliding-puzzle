@@ -4,7 +4,7 @@ import { increaseTime } from './actions/actions';
 import { consecutive } from './Helpers';
 import Piece from './Piece';
 import Monks from './assets/monks.jpg';
-import * as CONSTANTS from './constants';
+import CONSTANTS from './constants';
 import './styles/app.css';
 
 const PIECE_SIZE = CONSTANTS.PUZZLE_SIZE / CONSTANTS.COLUMNS;
