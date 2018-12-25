@@ -7,7 +7,8 @@ it('should return the initial state', () => {
       order: CONSTANTS.INITIAL_ORDER,
       moves: 0,
       time: 0,
-      score: CONSTANTS.SCORE
+      score: CONSTANTS.SCORE,
+      gameOver: false
     }
   );
 });
