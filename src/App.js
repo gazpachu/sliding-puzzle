@@ -11,19 +11,14 @@ class App extends PureComponent {
   renderPieces() {
     console.log('renderPieces');
     const { order } = this.props;
-    let offsetX = 0;
-    let top = 0;
 
     return order.map((index, i) => {
-      offsetX = Math.floor(index / CONSTANTS.COLUMNS) * PIECE_SIZE;
-      top = Math.floor(i / CONSTANTS.COLUMNS) * PIECE_SIZE;
-
       if (index !== null) {
         return (<Piece
           size={PIECE_SIZE}
-          offsetX={offsetX}
+          offsetX={Math.floor(index / CONSTANTS.COLUMNS) * PIECE_SIZE}
           offsetY={index % CONSTANTS.COLUMNS}
-          top={top}
+          top={Math.floor(i / CONSTANTS.COLUMNS) * PIECE_SIZE}
           left={i % CONSTANTS.COLUMNS}
           index={index + 1}
           pos={i}
