@@ -37,7 +37,7 @@ class App extends PureComponent {
           {gameOver ? <div className="congrats">Congratulations. You win! Thanks for playing</div> : this.renderPieces()}
         </div>
         <Info size={PIECE_SIZE} />
-        <footer className="footer">Sliding puzzle test with React and Redux for <a href="http://mediamonks.com">MediaMonks</a> by <a href="http://joanmira.com">Joan Mira</a> (<a href="https://github.com/gazpachu/sliding-puzzle">code</a>)</footer>
+        <footer className="footer">Sliding puzzle test with React and Redux by <a href="http://joanmira.com">Joan Mira</a> (<a href="https://github.com/gazpachu/sliding-puzzle">code</a>)</footer>
       </div>
     );
   }

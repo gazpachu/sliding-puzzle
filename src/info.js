@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { getEmptyTileIndex } from './selectors'
 import { increaseTime, endGame, cheat } from './actions/actions';
 import { consecutive } from './helpers';
-import Monks from './assets/monks.jpg';
-import Logo from './assets/logo.svg';
+import Image from './assets/image.jpg';
 import './styles/info.css';
 
 class Info extends PureComponent {
@@ -31,8 +30,7 @@ class Info extends PureComponent {
 
     return (
       <div className="info">
-        <img className="logo" src={Logo} alt="MediaMonks" />
-        <img className="preview" src={Monks} alt="Preview" width={size} height={size} />
+        <img className="preview" src={Image} alt="Preview" width={size} height={size} />
         <div className="details">
           <div className="empty">Empty index: {emptyTileIndex}</div>
           <div className="moves">Moves: {moves}</div>

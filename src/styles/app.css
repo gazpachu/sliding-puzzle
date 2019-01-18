@@ -8,7 +8,7 @@
 .puzzle {
   background: #cecece;
   position: relative;
-  background-image: url(../assets/monks.jpg);
+  background-image: url(../assets/image.jpg);
   width: 500px;
   height: 500px;
   background-blend-mode: overlay;

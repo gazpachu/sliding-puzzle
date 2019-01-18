@@ -10,7 +10,7 @@ export default (state = {
   switch (action.type) {
     case CONSTANTS.SLIDE: {
       // Switch tiles' positions
-      const order = state.order.slice();
+      const order = state.order.slice(0);
       const index = order[action.payload.pos];
       order[action.payload.pos] = null;
       order[action.payload.newPos] = index;
